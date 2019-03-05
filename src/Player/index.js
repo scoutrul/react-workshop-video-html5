@@ -86,7 +86,9 @@ export const Player = () => {
                 onTimeUpdate = { handleProgress }
             />
             <div className = 'controls'>
-                <div className = 'progress'>
+                <div
+                    className = 'progress'
+                    onClick = { scrub }>
                     <div
                         className = 'filled'
                         style = {{

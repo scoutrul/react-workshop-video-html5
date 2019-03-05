@@ -46,6 +46,7 @@ export const Player = () => {
     const scrub = (event) => {
         // offsetX
         // offsetWidth
+        // duration
     };
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;

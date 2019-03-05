@@ -47,6 +47,9 @@ export const Player = () => {
         // offsetX
         // offsetWidth
         // duration
+        const scrubTime
+            = event.nativeEvent.offsetX / event.currentTarget.offsetWidth
+            * videoRef.current.duration;
     };
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;

@@ -34,7 +34,7 @@ export const Player = () => {
     };
 
     /* Устанавливаем прогресс проигранного видео в процентах. */
-    const hnaldeProgess = () => {
+    const handldeProgess = () => {
         const progress
             = videoRef.current.currentTime / videoRef.current.duration * 100;
 
@@ -69,7 +69,12 @@ export const Player = () => {
             />
             <div className = 'controls'>
                 <div className = 'progress'>
-                    <div className = 'filled' />
+                    <div
+                        className = 'filled'
+                        style = {{
+                            '--filledProgressBar': `${progess}%`,
+                        }}
+                    />
                 </div>
                 <button
                     title = 'Toggle Play'

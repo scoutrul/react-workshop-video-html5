@@ -32,6 +32,13 @@ export const Player = () => {
         videoRef.current.currentTime += Number.parseFloat(seconds);
     };
 
+    /* Устанавливаем прогресс проигранного видео в процентах. */
+    const hnaldeProgess = () => {
+        const progress = videoRef.current.currentTime / videoRef.current.duration * 100;
+
+        
+    };
+
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 
     /* Добавляем слушатель вкл/выкл видео по нажатию на пробел. */

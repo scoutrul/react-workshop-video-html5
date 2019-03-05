@@ -37,7 +37,9 @@ export const Player = () => {
         /* Подписка, выполняется при первом рендере один раз. */
         document.addEventListener('keydown', handleKeydown);
 
+        /* Отписка, выполняется при удалении компонента один раз. */
         return () => document.removeEventListener('keydown', handleKeydown);
+        /* Эффект выполняется один раз, потому что вторым аргументом мы передали []. */
     }, []);
 
     return (

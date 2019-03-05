@@ -1,5 +1,5 @@
 // Core
-import React from 'react';
+import React, { useState } from 'react';
 
 // Instruments
 import './styles.css';
@@ -7,7 +7,7 @@ import './styles.css';
 import video from './spring.mp4';
 
 export const Player = () => {
-    const isPlaying = false;
+    const isPlaying = useState(false);
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 

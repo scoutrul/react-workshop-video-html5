@@ -72,7 +72,7 @@ export const Player = () => {
                     <div
                         className = 'filled'
                         style = {{
-                            '--filledProgressBar': `${progess}%`,
+                            '--filledProgressBar': `${progress}%`,
                         }}
                     />
                 </div>

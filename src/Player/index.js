@@ -7,8 +7,6 @@ import './styles.css';
 import video from './spring.mp4';
 
 export const Player = () => {
-    return <h1>Поехали!</h1>;
-
     const isPlaying = false;
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;

@@ -1,5 +1,5 @@
 // Core
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 // Instruments
 import './styles.css';
@@ -25,6 +25,18 @@ export const Player = () => {
     };
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
+
+    /* Добавляем слушатель вкл/выкл видео по нажатию на пробел. */
+    useEffect(() => {
+        const handleKeydown = (event) => {
+            if (event.code === 'Space') {
+                togglePlay();
+            }
+        };
+
+        /* Подписка, выполняется при первом рендере один раз. */
+        document.addEventListener('keydown', handleKeydown);
+    });
 
     return (
         <div className = 'player'>

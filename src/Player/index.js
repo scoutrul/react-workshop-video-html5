@@ -88,7 +88,8 @@ export const Player = () => {
             <div className = 'controls'>
                 <div
                     className = 'progress'
-                    onClick = { scrub }>
+                    onClick = { scrub }
+                    onMouseMove = { scrub }>
                     <div
                         className = 'filled'
                         style = {{

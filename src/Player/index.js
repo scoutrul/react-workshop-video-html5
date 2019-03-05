@@ -45,6 +45,7 @@ export const Player = () => {
     /* Устанавливаем прогресс видео указателем мыши. */
     const scrub = (event) => {
         // offsetX
+        // offsetWidth
     };
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;

@@ -1,5 +1,5 @@
 // Core
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 // Instruments
 import './styles.css';
@@ -8,6 +8,13 @@ import video from './spring.mp4';
 
 export const Player = () => {
     const [ isPlaying, setPlaying ] = useState(false);
+
+    /**
+     * Создаём реф для элемента video.
+     * Реф в React — это прямой доступ к html-элементу.
+     * С его помощью мы сможем управлять видеоплеером в явном виде.
+     */
+    const videoRef = useRef(null);
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 

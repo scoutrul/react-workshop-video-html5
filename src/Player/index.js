@@ -7,7 +7,7 @@ import './styles.css';
 import video from './spring.mp4';
 
 export const Player = () => {
-    const isPlaying = useState(false);
+    const [ isPlaying, setPlaying ] = useState(false);
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 

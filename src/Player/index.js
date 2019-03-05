@@ -89,9 +89,9 @@ export const Player = () => {
                 <div
                     className = 'progress'
                     onClick = { scrub }
-                    onMouseDown = { setProgressCapturing(true) }
+                    onMouseDown = { () => setProgressCapturing(true) }
                     onMouseMove = { (event) => isProgressCapturing && scrub(event) }
-                    onMouseUp = { setProgressCapturing(false) }>
+                    onMouseUp = { () => setProgressCapturing(false) }>
                     <div
                         className = 'filled'
                         style = {{

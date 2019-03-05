@@ -86,13 +86,11 @@ export const Player = () => {
                 <button
                     data-skip = '-10'
                     onClick = { skip }>
-                    {' '}
                     « 10s
                 </button>
                 <button
                     data-skip = '25'
                     onClick = { skip }>
-                    {' '}
                     25s »
                 </button>
                 <button>&#10021;</button>

@@ -17,7 +17,12 @@ export const Player = () => {
     const videoRef = useRef(null);
 
     /* Включаем или выключаем проигрывание видео. */
-    const togglePlay = () => {};
+    const togglePlay = () => {
+        const method = videoRef.current.paused ? 'play' : 'pause';
+
+        videoRef.current[ method ]();
+        setPlaying(method === 'play');
+    };
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 

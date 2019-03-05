@@ -44,9 +44,13 @@ export const Player = () => {
 
     /* Устанавливаем прогресс видео указателем мыши. */
     const scrub = (event) => {
-        // offsetX
-        // offsetWidth
-        // duration
+        /**
+         * offsetX — свойство события мыши. Возвращает расстояние от «начала» элемента до позиции указателя мыши по координате X.
+         * nativeEvent — ссылка на нативное, НЕ кросс-браузерное событие.
+         *
+         * offsetWidth — возвращает ширину элемента.
+         * О разнице между event.target и event.currentTarget: https://github.com/facebook/react/issues/5733#issuecomment-167188516.
+         */
         const scrubTime
             = event.nativeEvent.offsetX / event.currentTarget.offsetWidth
             * videoRef.current.duration;

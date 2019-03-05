@@ -16,6 +16,9 @@ export const Player = () => {
      */
     const videoRef = useRef(null);
 
+    /* Включаем или выключаем проигрывание видео. */
+    const togglePlay = () => {};
+
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 
     return (

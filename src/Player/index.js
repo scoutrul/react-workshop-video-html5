@@ -42,6 +42,9 @@ export const Player = () => {
         setProgress(progress);
     };
 
+    /* Устанавливаем прогресс видео указателем мыши. */
+    const scrub = (event) => {};
+
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 
     /* Добавляем слушатель вкл/выкл видео по нажатию на пробел. */

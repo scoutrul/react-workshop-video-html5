@@ -9,6 +9,7 @@ import video from './spring.mp4';
 export const Player = () => {
     const [ isPlaying, setPlaying ] = useState(false);
     const [ progress, setProgress ] = useState(0);
+    const [ isProgressCapturing, setProgressCapturing ] = useState(0);
 
     /**
      * Создаём реф для элемента video.

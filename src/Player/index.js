@@ -8,6 +8,7 @@ import video from './spring.mp4';
 
 export const Player = () => {
     const [ isPlaying, setPlaying ] = useState(false);
+    const [ progress, setProgress ] = useState(false);
 
     /**
      * Создаём реф для элемента video.
@@ -34,9 +35,8 @@ export const Player = () => {
 
     /* Устанавливаем прогресс проигранного видео в процентах. */
     const hnaldeProgess = () => {
-        const progress = videoRef.current.currentTime / videoRef.current.duration * 100;
-
-        
+        const progress
+            = videoRef.current.currentTime / videoRef.current.duration * 100;
     };
 
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;

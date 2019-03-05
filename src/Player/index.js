@@ -24,10 +24,19 @@ export const Player = () => {
         setPlaying(method === 'play');
     };
 
+    /* Прокручиваем прогресс проигрывания. */
+    const skip = (event) => {
+        /* Забираем время прокрутки из дата-атрибута JSX-элемента. */
+        const seconds = event.target.dataset.skip;
+
+        videoRef.current.currentTime += Number.parseFloat(seconds);
+    };
+
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 
     /* Добавляем слушатель вкл/выкл видео по нажатию на пробел. */
-    useEffect(() => { // componentDidMount + componentWillUnmount
+    useEffect(() => {
+        // componentDidMount + componentWillUnmount
         const handleKeydown = (event) => {
             if (event.code === 'Space') {
                 togglePlay();

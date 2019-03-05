@@ -66,6 +66,7 @@ export const Player = () => {
                 ref = { videoRef }
                 src = { video }
                 onClick = { togglePlay }
+                onTimeUpdate = { handldeProgess }
             />
             <div className = 'controls'>
                 <div className = 'progress'>

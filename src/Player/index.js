@@ -27,7 +27,7 @@ export const Player = () => {
     const playControl = isPlaying ? <>&#10074;&#10074;</> : <>&#9654;</>;
 
     /* Добавляем слушатель вкл/выкл видео по нажатию на пробел. */
-    useEffect(() => {
+    useEffect(() => { // componentDidMount + componentWillUnmount
         const handleKeydown = (event) => {
             if (event.code === 'Space') {
                 togglePlay();

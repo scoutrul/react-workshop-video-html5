@@ -13,11 +13,16 @@ export const Player = () => {
 
     const videoRef = useRef(null);
 
-    const changeFullScreen = (event) => {
-        console.log(videoRef);
-        // videoRef.current.requestFullScreen();
-        document.fullscreen = true;
-        // videoRef.current.height = window.screen.height;
+    const setFullScreen = () => {
+        if (videoRef.current.requestFullscreen) {
+            videoRef.current.requestFullscreen();
+        } else if (videoRef.current.mozRequestFullScreen) {
+            videoRef.current.mozRequestFullScreen();
+        } else if (videoRef.current.webkitRequestFullscreen) {
+            videoRef.current.webkitRequestFullscreen();
+        } else if (videoRef.current.msRequestFullscreen) {
+            videoRef.current.msRequestFullscreen();
+        }
     };
 
     const changeVolume = (event) => {
@@ -144,7 +149,7 @@ export const Player = () => {
                     25s »
                 </button>
                 <button
-                    onClick = { changeFullScreen }>&#10021;
+                    onClick = { setFullScreen }>&#10021;
                 </button>
             </div>
         </div>

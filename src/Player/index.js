@@ -11,12 +11,23 @@ export const Player = () => {
     const [ progress, setProgress ] = useState(0);
     const [ isProgressCapturing, setProgressCapturing ] = useState(0);
 
-    /**
-     * Создаём реф для элемента video.
-     * Реф в React — это прямой доступ к html-элементу.
-     * С его помощью мы сможем управлять видеоплеером в явном виде.
-     */
     const videoRef = useRef(null);
+
+    const changeFullScreen = (event) => {
+        console.log(videoRef);
+        // videoRef.current.requestFullScreen();
+        document.fullscreen = true;
+        // videoRef.current.height = window.screen.height;
+    };
+
+    const changeVolume = (event) => {
+        console.log(videoRef);
+        videoRef.current.volume = event.target.value;
+    };
+    const changePlaybackRate = (event) => {
+        console.log(videoRef);
+        videoRef.current.playbackRate = event.target.value;
+    };
 
     /* Включаем или выключаем проигрывание видео. */
     const togglePlay = () => {
@@ -105,20 +116,22 @@ export const Player = () => {
                     {playControl}
                 </button>
                 <input
-                    className = 'slider'
+                    className = 'slider volume'
                     max = '1'
                     min = '0'
                     name = 'volume'
                     step = '0.05'
                     type = 'range'
+                    onClick = { changeVolume }
                 />
                 <input
-                    className = 'slider'
-                    max = '2'
+                    className = 'slider playbackRate'
+                    max = '10'
                     min = '0.5'
                     name = 'playbackRate'
                     step = '0.1'
                     type = 'range'
+                    onClick = { changePlaybackRate }
                 />
                 <button
                     data-skip = '-10'
@@ -130,7 +143,9 @@ export const Player = () => {
                     onClick = { skip }>
                     25s »
                 </button>
-                <button>&#10021;</button>
+                <button
+                    onClick = { changeFullScreen }>&#10021;
+                </button>
             </div>
         </div>
     );

@@ -127,7 +127,8 @@ export const Player = () => {
                     name = 'volume'
                     step = '0.05'
                     type = 'range'
-                    onClick = { changeVolume }
+                    onMouseDown = { changeVolume }
+                    onMouseUp = { changeVolume }
                 />
                 <input
                     className = 'slider playbackRate'
@@ -136,7 +137,8 @@ export const Player = () => {
                     name = 'playbackRate'
                     step = '0.1'
                     type = 'range'
-                    onClick = { changePlaybackRate }
+                    onMouseDown = { changePlaybackRate }
+                    onMouseUp = { changePlaybackRate }
                 />
                 <button
                     data-skip = '-10'
